@@ -3,9 +3,11 @@ import {MongoClient} from 'mongodb'
 const app = express();
 app.use(express.json());
 
+/*
+Get conection
+*/ 
 const  getConnection = async () => {
     const client = new MongoClient('mongodb://127.0.0.1:27017');
-     
     await client.connect();
     const db = client.db('react-db-blog');
     return db;
